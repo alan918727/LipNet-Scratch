@@ -54,16 +54,17 @@ for filepath in find_files(SOURCE_PATH, SOURCE_EXTS):
             mouth_points.append((shape.parts()[i].x,shape.parts()[i].y))
             
             if i == 59  :
-                continue
+                cv2.line(frame,(shape.parts()[i].x,shape.parts()[i].y),\
+                                (shape.parts()[i-11].x,shape.parts()[i-11].y),(0,255,0),3)
             
             if i==67:
                 cv2.line(frame,(shape.parts()[i].x,shape.parts()[i].y),\
-                            (shape.parts()[i-7].x,shape.parts()[i-7].y),(0,255,0),1)
+                            (shape.parts()[i-7].x,shape.parts()[i-7].y),(0,255,0),3)
             else:
                 
                 # connect lines between feature point i and i+1 
                 cv2.line(frame,(shape.parts()[i].x,shape.parts()[i].y),\
-                                (shape.parts()[i+1].x,shape.parts()[i+1].y),(0,255,0),1)
+                                (shape.parts()[i+1].x,shape.parts()[i+1].y),(0,255,0),3)
                 
             
             
