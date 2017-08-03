@@ -1,0 +1,12 @@
+Way to extract cropped video frames:
+
+This program could search and import all videos from one path as input. The videos are extract into frames.
+ 
+Then, the dlib and 68 face_predictor_landmarks are used to extract the feature points 48-67, which is the mouth points from each frame. The mean of these points are set to the centroid of mouth and the width is the difference between max and min "x-axis". After normalization, the frames are cropped into 100*50 size.
+ 
+For each video, the 75 cropped frames data are saved into numpy array "mouth". I think these data could be used as training data. 
+ 
+For all the training samples, the final data are stored into numpy array "alldata" with size Samples*Frames*Height*Weight*Channels
+ 
+At last the frames are saved into target dir with different sample folder created.
+ 
