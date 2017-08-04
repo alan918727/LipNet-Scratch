@@ -1,0 +1,18 @@
+the prepare program is to create the training folders and its dataset
+
+
+it reads the datasets video path and align path(can be anywhere in other directory)
+
+and extract the speaker_id, s_id, video_id
+
+
+then it create the folder format like 
+
+CURRENT_PATH, speaker_id, 'datasets', 'val', s_id, video_id
+CURRENT_PATH, speaker_id, 'datasets', 'train', s_id, video_id
+
+for train datasets and val datasets
+
+then it make symbolic link which link the current_path videos to the video datasets. the current aligns to the datasets align path
+
+ 
